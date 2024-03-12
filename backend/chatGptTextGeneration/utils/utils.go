@@ -9,7 +9,6 @@ import (
 	"os"
 )
 
-// ChatGPTRequest represents the JSON request structure for ChatGPT
 type ChatGPTRequest struct {
 	Model    string `json:"model"`
 	Messages []struct {
@@ -18,13 +17,11 @@ type ChatGPTRequest struct {
 	} `json:"messages"`
 }
 
-// GetChatGptResponse sends a prompt to OpenAI's ChatGPT API and returns the response
 func GetChatGptResponse(prompt string) (string, error) {
 	var (
 		ChatGptURL = "https://api.openai.com/v1/chat/completions"
 	)
 
-	// Get the OpenAI API key from environment variables
 	openAIKey := os.Getenv("OPENAI_KEY")
 	if openAIKey == "" {
 		return "", errors.New("OPENAI_KEY not found in environment variables")

@@ -256,10 +256,11 @@ function ChatGPTStyleComponent() {
 
   return (
     <>
+      
+      <div className="h-screen bg-gray-900 text-white flex flex-col justify-between ">
       <Header />
-      <div className="min-h-screen bg-gray-900 text-white flex flex-col justify-between pt-4 pb-4">
         <div className="overflow-auto p-4" style={{ maxHeight: '80vh' }}>
-          <h1 className="text-xl font-bold mb-4">ChatGPT Style Chat</h1>
+          <h1 className="text-xl font-bold  flex justify-center "> welcome to Lazarus AI</h1>
           <div className="space-y-2">
             {conversation.map((message, index) =>
               <div key={index} className={`p-2 pt-8 pb-8 rounded-lg max-w-3xl ${message.type === 'user' ? 'self-end bg-blue-500' : message.type === 'bot' ? 'self-start bg-green-500 relative' : 'bg-red-500'} chat-message`} style={{ overflow: 'auto', whiteSpace: 'pre-wrap' }}>

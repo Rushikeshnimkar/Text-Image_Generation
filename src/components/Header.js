@@ -12,12 +12,12 @@ import { MdClose } from "react-icons/md";
 import MobileNav from "./MobileNav";
 
 function Header() {
-  const [showNav, setShowNav] = useState(false);
+  const [showNav, setShowNav] = useState(false);  
   const location = useLocation();
 
   // Function to get the active link color
   const getLinkColor = (path) => {
-    return location.pathname === path ? "bg-white text-blue-800 bg-opacity-50 backdrop-blur-lg " : " bg-transparent bg-opacity-50 backdrop-blur-lg";
+    return location.pathname === path ? " bg-blue text-blue-800 bg-opacity-50 backdrop-blur-lg " : " bg-transparent bg-opacity-50 backdrop-blur-lg";
   };
 
   return (
@@ -64,7 +64,7 @@ function Header() {
           </li>
           <li className="relative group">
             <Link
-              to={"/resume"}
+              to={"/about"}
               className={`flex gap-1 items-center justify-center cursor-pointer text-base lg:text-lg font-semibold relative before:absolute before:rounded-md before:left-0 before:-bottom-1 before:w-0 transition-all before:duration-200 before:h-[4px] ${getLinkColor(
                 "/resume"
               )}`}

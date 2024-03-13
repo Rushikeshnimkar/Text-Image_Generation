@@ -239,7 +239,7 @@ function ChatGPTStyleComponent() {
     setConversation((conv) => [...conv, userMessage]);
 
     try {
-      const response = await axios.post('http://localhost:8001', { prompt: inputValue });
+      const response = await axios.post('http://localhost:8080/text', { prompt: inputValue });
       const responseData = JSON.parse(response.data.response);
       const content = responseData.choices[0].message.content;
       const botMessage = { type: 'bot', text: content };
